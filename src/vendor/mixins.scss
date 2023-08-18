@@ -1,0 +1,12 @@
+@import './fonts/fonts.scss';
+@import './variables.scss';
+
+@mixin textFormat($size, $margin, $color: $main-color) {
+    font: {
+        size: $size;
+    };
+    margin: $margin;
+    color: $color;
+    font-family: $fontFamily;
+    text-align: justify;
+}

@@ -1,0 +1,25 @@
+# Exclude development and build files
+/node_modules
+/package-lock.json
+/yarn.lock
+
+# Exclude source files and folders
+/src
+/.git
+.gitignore
+
+# Exclude configuration files
+.babelrc
+.eslintignore
+.eslintrc.js
+
+webpack.config.js
+
+# Exclude editor configuration
+.editorconfig
+
+# Exclude testing files and folders
+/tests
+/jest.config.js
+
+# Exclude any other files or folders you don't want to publish
