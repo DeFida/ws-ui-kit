@@ -1,0 +1,58 @@
+/* Display Flex Utilities */
+/* Container */
+.df { display: flex; }
+
+/* Direction */
+.r { display: flex; flex-direction: row; }
+.rr { display: flex; flex-direction: row-reverse; }
+.c { display: flex; flex-direction: column; }
+.cr { display: flex; flex-direction: column-reverse; }
+
+/* Wrap */
+.w { display: flex; flex-wrap: wrap; }
+.nw { display: flex; flex-wrap: nowrap; }
+.wr { display: flex; flex-wrap: wrap-reverse; }
+
+/* Justify Content */
+.jcfs { display: flex; justify-content: flex-start; }
+.jcfe { display: flex; justify-content: flex-end; }
+.jcc { display: flex; justify-content: center; }
+.jcsb { display: flex; justify-content: space-between; }
+.jcsa { display: flex; justify-content: space-around; }
+
+/* Align Items */
+.as { display: flex; align-items: flex-start; }
+.ac { display: flex; align-items: center; }
+.ae { display: flex; align-items: flex-end; }
+.ab { display: flex; align-items: baseline; }
+.ast { display: flex; align-items: stretch; }
+
+/* Align Content */
+.acfs { display: flex; align-content: flex-start; }
+.acfe { display: flex; align-content: flex-end; }
+.acce { display: flex; align-content: center; }
+.acsb { display: flex; align-content: space-between; }
+.acsa { display: flex; align-content: space-around; }
+.acst { display: flex; align-content: stretch; }
+
+/* Flex Item */
+.i { display: flex; flex: 1; }
+
+/* Align Self */
+.ass { display: flex; align-self: flex-start; }
+.ase { display: flex; align-self: flex-end; }
+.acs { display: flex; align-self: center; }
+.ab { display: flex; align-self: baseline; }
+.ast { display: flex; align-self: stretch; }
+
+/* Combinations */
+.fc { display: flex; align-items: center; justify-content: center; }
+.fcv { display: flex; align-items: center; }
+.fch { display: flex; justify-content: center; }
+.frc { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+.fcc { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.fsb { display: flex; justify-content: space-between; }
+.fsa { display: flex; justify-content: space-around; }
+.fwc { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
+.fwsb { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.fwsa { display: flex; flex-wrap: wrap; justify-content: space-around; }

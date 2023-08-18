@@ -1,0 +1,24 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
+.WSParagraph {
+    @include textFormat($regular-size-desktop, 0 0 1rem);
+}
+
+.WSArticleParagraph {
+    @include textFormat($regular-size-desktop, 0 0 1rem);
+    line-height: 1.8rem;
+    max-width: $max-article-width-desktop;
+    text-align: justify;
+}
+
+@media screen and (max-width: 767px) {
+    .WSParagraph {
+        @include textFormat($regular-size-mobile, 0);
+    }   
+
+    .WSArticleParagraph {
+        font-size: $regular-size-mobile;
+        max-width: $max-article-width-mobile;
+    }   
+}

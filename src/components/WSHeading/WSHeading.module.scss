@@ -1,0 +1,21 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
+.WSH1 {
+    @include textFormat($title-size-desktop, 0 0 2rem);
+}
+
+.WSH2 {
+    @include textFormat($subtitle-size-desktop, 0 0 1.5rem);
+}
+
+
+@media screen and (max-width: 767px) {
+    .WSH1 {
+        @include textFormat($title-size-mobile, 0 0 1rem);
+    }   
+
+    .WSH2 {
+        @include textFormat($subtitle-size-mobile, 0 0 1rem);
+    }  
+}

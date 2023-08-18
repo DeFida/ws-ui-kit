@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
+import React, {ButtonHTMLAttributes, FC} from 'react';
 import styles from './WSButton.module.scss';
 
-export interface WSButtonProps {
+interface WSButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: string;
     reversed?: boolean;
     action?: boolean;

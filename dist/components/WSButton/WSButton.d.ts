@@ -1,5 +1,5 @@
-import { FC } from 'react';
-export interface WSButtonProps {
+import { ButtonHTMLAttributes, FC } from 'react';
+interface WSButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: string;
     reversed?: boolean;
     action?: boolean;
