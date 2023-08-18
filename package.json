@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeFida/ws-components.git"
+    "url": "git+https://github.com/DeFida/ws-ui-kit.git"
   },
   "keywords": [
     "\"weskill\""
@@ -45,9 +45,9 @@
   "author": "weskill",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DeFida/ws-components/issues"
+    "url": "https://github.com/DeFida/ws-ui-kit.git/issues"
   },
-  "homepage": "https://github.com/DeFida/ws-components#readme",
+  "homepage": "https://github.com/DeFida/ws-ui-kit.git#readme",
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
