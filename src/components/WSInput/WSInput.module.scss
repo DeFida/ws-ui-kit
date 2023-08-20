@@ -1,3 +1,16 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
 .WSInput {
-    
+    width: 100%;
+    padding: 1rem;
+    font-size: 18px;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+        border-color: $main-color;
+    }
+
 }
