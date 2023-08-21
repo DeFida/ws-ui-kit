@@ -1,4 +1,4 @@
-import React, {FC, InputHTMLAttributes, useRef, useState} from 'react';
+import React, {FC, InputHTMLAttributes, useEffect, useRef, useState} from 'react';
 import styles from './WSInput.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
 import { colorsStyles } from '../..';
@@ -9,14 +9,19 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     required?: boolean;
     id: string;
     label: string;
+    error?: string | null;
 }
 
-const WSInput: FC<WSInputProps> = ({ children, className='', required=false, label, id, name, ...props }) => {
+const WSInput: FC<WSInputProps> = ({ children, className='', error=null, required=false, label, id, name, ...props }) => {
     let componentClassName = `${styles.WSInput} ${className}`;
     
-    // const inputRef = useRef<HTMLInputElement | null>(null);
-    const [errorMessage, setErrorMessage] = useState<string | null>('You are an error!')
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>('')
 
+    useEffect(() => {
+        setErrorMessage(error)
+    }, [error])
+    
     return (
         <div>
             <div>
@@ -24,7 +29,8 @@ const WSInput: FC<WSInputProps> = ({ children, className='', required=false, lab
                 {required && <p>*</p>}
             </div>
 
-            <input id={id} name={name} className={componentClassName} {...props} />
+            <input id={id} ref={inputRef} name={name} className={componentClassName} {...props} />
+
             {errorMessage && <WSParagraph className={colorsStyles.secondary}>{errorMessage}</WSParagraph>}
         </div>
         
