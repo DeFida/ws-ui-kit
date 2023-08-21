@@ -2,15 +2,56 @@
 @import '../../vendor/mixins.scss';
 
 .WSInput {
-    width: 100%;
-    padding: 1rem;
-    font-size: 18px;
-    border: 1px solid $secondary-color;
-    border-radius: 5px;
-    outline: none;
 
-    &:focus {
-        border-color: $main-color;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+    .Label {
+        position: absolute;
+        transform: translateY(-50%);
+        left: .4rem;
+        padding: 0 5px;    
+        background: white;
+        border-radius: 3px;
+        text-align: center;
+        @include textFormat(14px, 0);
+        color: $secondary-color;
     }
 
+    .Label_focused {
+        color: $main-color;
+    }
+    
+
+    .Input {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid $secondary-color;
+        border-radius: 5px;
+        outline: none;
+        @include textFormat(18px, 0);
+        &:focus {
+            border-color: $main-color;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus, 
+        &:-webkit-autofill:active{
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+    }
+
+    .Error {
+        width: 100%; 
+        margin: .5rem 0 0;
+        font-size: 14px;
+    }
+}
+
+.WSInput_Intermediate {
+    margin: 0 0 2rem;
 }

@@ -1,4 +1,4 @@
-import React, {FC, InputHTMLAttributes, useEffect, useRef, useState} from 'react';
+import React, {ChangeEvent, FC, InputHTMLAttributes, useEffect, useState} from 'react';
 import styles from './WSInput.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
 import { colorsStyles } from '../..';
@@ -9,29 +9,39 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     required?: boolean;
     id: string;
     label: string;
+    value: string;
     error?: string | null;
+    requiredMessage?: string | null;
+    intermediate?: boolean;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const WSInput: FC<WSInputProps> = ({ children, className='', error=null, required=false, label, id, name, ...props }) => {
-    let componentClassName = `${styles.WSInput} ${className}`;
+const WSInput: FC<WSInputProps> = ({ children, className='', requiredMessage='', value, onChange, intermediate=false, error=null, required=false, label, id, name, ...props }) => {
+    let componentClassName = `${styles.Input} ${className}`;
     
-    const inputRef = useRef<HTMLInputElement | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>('')
+    const [focused, setFocused] = useState(false);
 
     useEffect(() => {
         setErrorMessage(error)
     }, [error])
-    
+
+
+    function blured() {
+        setFocused(false)
+        if (required && !value) {
+            setErrorMessage(requiredMessage)
+        }
+    }
+
     return (
-        <div>
-            <div>
-                <label htmlFor={id}>{label}</label>
-                {required && <p>*</p>}
-            </div>
+        <div className={`${styles.WSInput} ${intermediate ? styles.WSInput_Intermediate : ''}`} >
+            <label className={`${styles.Label} ${focused ? styles.Label_focused : ''}`} htmlFor={id}>{label} {required && '*'}</label>
 
-            <input id={id} ref={inputRef} name={name} className={componentClassName} {...props} />
+            <input onBlur={blured} value={value} onChange={onChange} onFocus={() => setFocused(true)} id={id} name={name} className={componentClassName} {...props} />
 
-            {errorMessage && <WSParagraph className={colorsStyles.secondary}>{errorMessage}</WSParagraph>}
+            {errorMessage && <WSParagraph className={`${colorsStyles.secondary} ${styles.Error}`}>{errorMessage}</WSParagraph>}
+
         </div>
         
     )
