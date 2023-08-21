@@ -1,6 +1,6 @@
 {
   "name": "ws-ui-comp",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "All components and layouts used in the Weskill web application",
   "main": "./dist/index.js",
   "scripts": {
