@@ -60,6 +60,7 @@
     "dist"
   ],
   "dependencies": {
-    "@storybook/preset-scss": "^1.0.3"
+    "@storybook/preset-scss": "^1.0.3",
+    "os-browserify": "^0.3.0"
   }
 }
