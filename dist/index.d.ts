@@ -5,4 +5,5 @@ import WSParagraph from "./components/WSParagraph/WSParagraph";
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
-export { colorsStyles, fontsStyles, positionsStyles, WSButton, WSHeading, WSInput, WSParagraph, };
+import WSForm from './components/WSForm/WSForm';
+export { colorsStyles, fontsStyles, positionsStyles, WSButton, WSHeading, WSInput, WSParagraph, WSForm };
