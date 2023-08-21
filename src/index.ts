@@ -6,6 +6,7 @@ import WSParagraph from "./components/WSParagraph/WSParagraph";
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
+import WSForm from '../dist/components/WSForm/WSForm';
 
 export {
     colorsStyles, 
@@ -16,4 +17,5 @@ export {
     WSHeading,
     WSInput,
     WSParagraph,
+    WSForm
 }
