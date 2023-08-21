@@ -1,15 +1,15 @@
-import { ChangeEvent, FC, InputHTMLAttributes } from 'react';
+import { FC, InputHTMLAttributes } from 'react';
 interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    className?: string;
     name: string;
-    required?: boolean;
+    className?: string;
     id: string;
     label: string;
     value: string;
+    required?: boolean;
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    change: (value: string) => void;
 }
 declare const WSInput: FC<WSInputProps>;
 export default WSInput;

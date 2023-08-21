@@ -15,7 +15,7 @@ const WSForm: React.FC<FormProps> = ({ children, submitButton, onSubmit, width =
   return (
     <form className={`${styles.WSForm}`} onSubmit={onSubmit} style={{width}} {...props}>
       {children}
-      <WSButton action>{submitButton}</WSButton>
+      <WSButton style={{width: '100%'}} action>{submitButton}</WSButton>
     </form>
   );
 };
