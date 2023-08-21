@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, InputHTMLAttributes, useEffect, useState} from 'react';
+import React, { FC, InputHTMLAttributes, useEffect, useState } from 'react';
 import styles from './WSInput.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
 import { colorsStyles } from '../..';
