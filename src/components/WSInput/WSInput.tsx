@@ -14,10 +14,10 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    onChange: (value: string) => void;
+    change: (value: string) => void;
 }
 
-const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, onChange, intermediate=false, error=null, required=false, label, id, name, ...props }) => {
+const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, change, intermediate=false, error=null, required=false, label, id, name, ...props }) => {
     let componentClassName = `${styles.Input} ${className}`;
     
     const [errorMessage, setErrorMessage] = useState<string | null>('')
@@ -39,7 +39,7 @@ const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, on
         <div className={`${styles.WSInput} ${intermediate ? styles.WSInput_Intermediate : ''}`} >
             <label className={`${styles.Label} ${focused ? styles.Label_focused : ''}`} htmlFor={id}>{label} {required && '*'}</label>
 
-            <input onBlur={blured} value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)} onFocus={() => setFocused(true)} id={id} name={name} className={componentClassName} {...props} />
+            <input onBlur={blured} value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => change(e.target.value)} onFocus={() => setFocused(true)} id={id} name={name} className={componentClassName} {...props} />
 
             {errorMessage && <WSParagraph className={`${colorsStyles.secondary} ${styles.Error}`}>{errorMessage}</WSParagraph>}
 
