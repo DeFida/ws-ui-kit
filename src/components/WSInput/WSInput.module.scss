@@ -3,7 +3,7 @@
 
 .WSInput {
 
-    width: 300px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
     
 
     .Input {
-        width: 100%;
+        width: calc(100% - 2rem);
         padding: 1rem;
         border: 1px solid $secondary-color;
         border-radius: 5px;
