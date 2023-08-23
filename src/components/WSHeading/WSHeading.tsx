@@ -1,11 +1,11 @@
-import React, { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 
 import styles from './WSHeading.module.scss';
 
 type HeadingType = 'h1' | 'h2';
 
 interface WSHeadingProps extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
-    children?: string;
+    children?: ReactNode;
     type: HeadingType;
     className?: string;
 }

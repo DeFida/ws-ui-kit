@@ -1,3 +1,6 @@
+
+
+
 import React, { ReactNode, FormHTMLAttributes, FormEvent, useState } from 'react';
 import styles from './WSForm.module.scss';
 import WSButton from '../WSButton/WSButton';
@@ -10,9 +13,6 @@ interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
 }
 
 const WSForm: React.FC<FormProps> = ({ children, submitButton, onSubmit, width = '400px', ...props }) => {
-
-    const [name, setName] = useState('');
-
     return (
         <form className={`${styles.WSForm}`} onSubmit={onSubmit} style={{width}} {...props}>
             {children}
@@ -22,3 +22,5 @@ const WSForm: React.FC<FormProps> = ({ children, submitButton, onSubmit, width =
 };
 
 export default WSForm;
+
+
