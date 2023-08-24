@@ -1,15 +1,23 @@
 .WSHeader {
-    width: calc(100% - 2rem);
-    margin: 0;
-    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
-    .logo {
-        width: 30px;
-        height: auto;
-        object-fit: cover;
-    }
+    border: 1px solid red;
+}
+
+.WSHeader__logo {
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.WSHeader__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }

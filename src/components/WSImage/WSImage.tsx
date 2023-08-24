@@ -23,7 +23,6 @@ const WSImage: React.FC<WSImageProps> = ({ src, alt, width, objectFit='cover', h
   }, [src]);
 
   return (
-    <div style={{ width, height, position: 'relative', margin: 0, padding: 0 }}>
       <img
         src={src}
         alt={alt}
@@ -33,19 +32,6 @@ const WSImage: React.FC<WSImageProps> = ({ src, alt, width, objectFit='cover', h
         height={height}
         {...props}
       />
-      {!loaded && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-          }}
-        >
-          Loading...
-        </div>
-      )}
-    </div>
   );
 };
 
