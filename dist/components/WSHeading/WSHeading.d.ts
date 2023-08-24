@@ -1,7 +1,7 @@
-import { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 type HeadingType = 'h1' | 'h2';
 interface WSHeadingProps extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
-    children?: string;
+    children?: ReactNode;
     type: HeadingType;
     className?: string;
 }

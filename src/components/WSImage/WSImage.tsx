@@ -5,13 +5,13 @@ interface WSImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
   width: number;
-  className?: string;
   height: number;
+  className?: string;
   style?: object;
-  objectFit: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
 }
 
-const WSImage: React.FC<WSImageProps> = ({ src, alt, width, objectFit, height, className='', style, ...props }) => {
+const WSImage: React.FC<WSImageProps> = ({ src, alt, width, objectFit='cover', height, className='', style, ...props }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

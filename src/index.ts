@@ -8,6 +8,7 @@ import WSInput from "./components/WSInput/WSInput";
 import WSParagraph from "./components/WSParagraph/WSParagraph";
 import WSForm from './components/WSForm/WSForm';
 import WSImage from './components/WSImage/WSImage';
+import WSHeader from './components/WSHeader/WSHeader';
 
 export {
     colorsStyles, 
@@ -19,5 +20,6 @@ export {
     WSInput,
     WSParagraph,
     WSForm,
-    WSImage
+    WSImage,
+    WSHeader,
 }
