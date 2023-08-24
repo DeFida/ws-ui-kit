@@ -7,4 +7,5 @@ import WSInput from "./components/WSInput/WSInput";
 import WSParagraph from "./components/WSParagraph/WSParagraph";
 import WSForm from './components/WSForm/WSForm';
 import WSImage from './components/WSImage/WSImage';
-export { colorsStyles, fontsStyles, positionsStyles, WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage };
+import WSHeader from './components/WSHeader/WSHeader';
+export { colorsStyles, fontsStyles, positionsStyles, WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, };
