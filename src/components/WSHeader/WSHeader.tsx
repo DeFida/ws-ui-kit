@@ -16,7 +16,7 @@ const WSHeader: FC<WSHeaderProps> = ({children, className, logo }) => {
 
     return (
         <div className={`${componentClassName}`}>
-            <WSImage height={40} width={30} alt='logo' src={logo} className={styles.WSHeader_logo} />
+            <WSImage height={40} width={30} alt='logo' src={logo} className={styles.logo} />
         </div>
     );
 };
