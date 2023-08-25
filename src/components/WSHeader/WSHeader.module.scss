@@ -1,12 +1,11 @@
 .WSHeader {
     width: 100%;
     margin: 1rem 0 0;
-    padding: 0;
+    padding: 1rem 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid red;
 }
 
 .WSHeader__logo {
