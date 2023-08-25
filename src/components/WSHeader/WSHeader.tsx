@@ -2,7 +2,6 @@ import React, { FC, ReactNode } from 'react';
 
 import styles from './WSHeader.module.scss';
 import WSImage from '../WSImage/WSImage';
-import WSButton from '../WSButton/WSButton';
 
 interface WSHeaderProps {
     children?: ReactNode;

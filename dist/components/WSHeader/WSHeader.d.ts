@@ -4,6 +4,7 @@ interface WSHeaderProps {
     className?: string;
     logo?: any;
     onLogoClick?: () => void;
+    buttons?: ReactNode;
 }
 declare const WSHeader: FC<WSHeaderProps>;
 export default WSHeader;
