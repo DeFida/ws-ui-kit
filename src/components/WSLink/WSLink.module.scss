@@ -1,0 +1,12 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
+.WSLink {
+    @include textFormat($regular-size-desktop, 0 0 1rem);
+}
+
+@media screen and (max-width: 767px) {
+    .WSLink {
+        @include textFormat($regular-size-mobile, 0);
+    }
+}
