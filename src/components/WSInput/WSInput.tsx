@@ -35,11 +35,16 @@ const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, ch
         }
     }
 
+    function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
+        change(e.target.value);
+        setErrorMessage(null)
+    }
+
     return (
         <div className={`${styles.WSInput} ${intermediate ? styles.WSInput_Intermediate : ''}`} >
             <label className={`${styles.Label} ${focused ? styles.Label_focused : ''}`} htmlFor={id}>{label} {required && '*'}</label>
 
-            <input onBlur={blured} value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => change(e.target.value)} onFocus={() => setFocused(true)} id={id} name={name} className={componentClassName} {...props} />
+            <input onBlur={blured} value={value} onChange={handleChange} onFocus={() => setFocused(true)} id={id} name={name} className={componentClassName} {...props} />
 
             {errorMessage && <WSParagraph className={`${colorsStyles.secondary} ${styles.Error}`}>{errorMessage}</WSParagraph>}
 
