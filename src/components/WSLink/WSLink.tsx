@@ -5,7 +5,7 @@ interface WSLinkProps extends HTMLProps<HTMLAnchorElement> {
     className?: string; 
 }
 
-const WSLink: FC<WSLinkProps> = ({ children, className = '', ...props }) => {
+const WSLink: FC<WSLinkProps> = ({ children,  className = '', ...props }) => {
 
     let componentClassName = `${styles.WSLink} ${className}`;
 

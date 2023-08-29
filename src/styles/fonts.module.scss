@@ -2,6 +2,14 @@
     font-weight: 400;
 }
 
+.default { 
+    @include textFormat($regular-size-desktop, 0 0 1rem);
+}
+
+.link {
+    @include textFormat($regular-size-desktop, 0 0 1rem, $secondary-color);
+}
+
 .medium {
     font-weight: 500;
 }
