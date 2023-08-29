@@ -13,10 +13,6 @@ import WSFooter from './components/WSFooter/WSFooter';
 import WSLink from './components/WSLink/WSLink';
 
 export {
-    colorsStyles, 
-    fontsStyles,
-    positionsStyles,
-
     WSButton,
     WSHeading,
     WSInput,
@@ -26,4 +22,8 @@ export {
     WSHeader,
     WSFooter,
     WSLink,
+
+    colorsStyles, 
+    fontsStyles,
+    positionsStyles,
 }
