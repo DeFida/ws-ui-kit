@@ -3,6 +3,8 @@
 
 .WSLink {
     @include textFormat($regular-size-desktop, 0 0 1rem);
+    text-decoration: none;
+    color: $secondary-color;
 }
 
 @media screen and (max-width: 767px) {
