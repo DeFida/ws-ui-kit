@@ -19,7 +19,6 @@ type Story = StoryObj<typeof meta>;
 export const Form: Story = {
   args: {
     onSubmit: (e) => {e.preventDefault(); alert('asd')},
-    submitButton: "Alert me!",
     children: 'asdasd'
   },
 };
