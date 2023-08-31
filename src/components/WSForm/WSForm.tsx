@@ -1,20 +1,17 @@
 import React, { ReactNode, FormHTMLAttributes, FormEvent } from 'react';
 import styles from './WSForm.module.scss';
-import WSParagraph from '../WSParagraph/WSParagraph';
-import colorsStyles from '../../styles/colors.module.scss';
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   children: ReactNode;
   width?: string;
-  error: string | null;
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
 }
 
-const WSForm: React.FC<FormProps> = ({ children, onSubmit, error=null, width = '400px', ...props }) => {
+const WSForm: React.FC<FormProps> = ({ children, onSubmit, width = '400px', ...props }) => {
     return (
         <form className={`${styles.WSForm}`} onSubmit={onSubmit} style={{width}} {...props}>
             {children}
-            {error && <WSParagraph className={`${colorsStyles.secondary} ${styles.error}`}>{error}</WSParagraph>}
+            
         </form>
     );
 };
