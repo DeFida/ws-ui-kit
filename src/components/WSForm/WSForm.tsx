@@ -1,7 +1,7 @@
 import React, { ReactNode, FormHTMLAttributes, FormEvent } from 'react';
 import styles from './WSForm.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
-import { colorsStyles } from '../../styles/colors.module.scss';
+import colorsStyles from '../../styles/colors.module.scss';
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   children: ReactNode;
