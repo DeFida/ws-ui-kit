@@ -1,6 +1,6 @@
 import React, { ReactNode, FormHTMLAttributes, FormEvent } from 'react';
 import styles from './WSForm.module.scss';
-import WSParagraph from '../../../dist/components/WSParagraph/WSParagraph';
+import WSParagraph from '../WSParagraph/WSParagraph';
 import { colorsStyles } from '../..';
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
