@@ -10,4 +10,4 @@ import WSImage from './components/WSImage/WSImage';
 import WSHeader from './components/WSHeader/WSHeader';
 import WSFooter from './components/WSFooter/WSFooter';
 import WSLink from './components/WSLink/WSLink';
-export { colorsStyles, fontsStyles, positionsStyles, WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, };
+export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, colorsStyles, fontsStyles, positionsStyles, };
