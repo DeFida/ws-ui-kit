@@ -1,7 +1,7 @@
 import React, { FC, InputHTMLAttributes, useEffect, useState } from 'react';
 import styles from './WSInput.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
-import { colorsStyles } from '../../styles/colors.module.scss';
+import colorsStyles from '../../styles/colors.module.scss';
 
 interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
