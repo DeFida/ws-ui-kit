@@ -2,25 +2,11 @@
 @import '../../vendor/mixins.scss';
 
 .WSParagraph {
-    font: {
-        size: $regular-size-desktop;
-    };
-    margin: 0 0 1rem;
-    color: $main-color;
-    text-decoration: none;
-    font-family: 'Inter';
-    text-align: justify;
+    @include textFormat($regular-size-desktop, 0 0 1rem);
 }
 
 .WSArticleParagraph {
-    font: {
-        size: 1rem;
-    };
-    margin: 0 0 1rem;
-    color: $main-color;
-    text-decoration: none;
-    font-family: 'Inter';
-    text-align: justify;
+    @include textFormat($regular-size-desktop, 0 0 1rem);
     line-height: 1.8rem;
     max-width: $max-article-width-desktop;
     text-align: justify;
@@ -28,10 +14,7 @@
 
 @media screen and (max-width: 767px) {
     .WSParagraph {
-        font: {
-            size: $regular-size-mobile;
-        };
-        max-width: $max-article-width-mobile;
+        @include textFormat($regular-size-mobile, 0);
     }   
 
     .WSArticleParagraph {
