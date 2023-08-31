@@ -2,7 +2,15 @@
 @import '../../vendor/mixins.scss';
 
 .WSParagraph {
-    @include textFormat($regular-size-desktop, 0 0 1rem);
+    // @include textFormat($regular-size-desktop, 0 0 1rem);
+    font: {
+        size: 1rem;
+    };
+    margin: 0 0 1rem;
+    color: $main-color;
+    text-decoration: none;
+    font-family: 'Inter';
+    text-align: justify;
 }
 
 .WSArticleParagraph {
