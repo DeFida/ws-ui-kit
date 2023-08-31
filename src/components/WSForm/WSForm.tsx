@@ -1,7 +1,7 @@
 import React, { ReactNode, FormHTMLAttributes, FormEvent } from 'react';
 import styles from './WSForm.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
-import { colorsStyles } from '../..';
+import { colorsStyles } from '../../styles/colors.module.scss';
 
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   children: ReactNode;
@@ -14,7 +14,7 @@ const WSForm: React.FC<FormProps> = ({ children, onSubmit, error=null, width = '
     return (
         <form className={`${styles.WSForm}`} onSubmit={onSubmit} style={{width}} {...props}>
             {children}
-            {error && <WSParagraph className={`${colorsStyles.secondary}`}>{error}</WSParagraph>}
+            {error && <WSParagraph className={`${colorsStyles.secondary} ${styles.error}`}>{error}</WSParagraph>}
         </form>
     );
 };
