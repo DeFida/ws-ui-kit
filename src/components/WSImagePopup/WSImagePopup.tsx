@@ -13,7 +13,7 @@ const WSImagePopup: FC<WSImagePopupProps> = ({image, onClose, ...props }) => {
     return (
         <div className={`${styles.WSImagePopup}`} {...props}>
             <div className={`${styles.container}`}>
-                <WSCloseButton onClick={onClose} dark className={styles.close}/>
+                <WSCloseButton onClick={onClose} closeImage='https://www.weskill.kz/_next/static/media/popup_close.d3572268.svg' className={styles.close}/>
                 <WSImage src={image} alt='popupImage' width={100} height={100} className={`${styles.image}`} />
             </div>
         </div>
