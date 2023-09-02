@@ -1,6 +1,3 @@
-import colorsStyles from './styles/colors.module.scss';
-import fontsStyles from './styles/fonts.module.scss';
-import positionsStyles from './styles/fonts.module.scss';
 import WSButton from "./components/WSButton/WSButton";
 import WSHeading from "./components/WSHeading/WSHeading";
 import WSInput from "./components/WSInput/WSInput";
@@ -10,4 +7,10 @@ import WSImage from './components/WSImage/WSImage';
 import WSHeader from './components/WSHeader/WSHeader';
 import WSFooter from './components/WSFooter/WSFooter';
 import WSLink from './components/WSLink/WSLink';
-export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, colorsStyles, fontsStyles, positionsStyles, };
+import WSLoadingIndicator from "./components/WSLoadingIndicator/WSLoadingIndicator";
+import colorsStyles from './styles/colors.module.scss';
+import fontsStyles from './styles/fonts.module.scss';
+import positionsStyles from './styles/fonts.module.scss';
+import WSCloseButton from './components/WSCloseButton/WSCloseButton';
+import WSImagePopup from './components/WSImagePopup/WSImagePopup';
+export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, colorsStyles, fontsStyles, positionsStyles, };
