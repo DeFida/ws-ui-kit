@@ -25,6 +25,10 @@ module.exports = {
                 ],
             },
             {
+                test: /\.svg$/,
+                use: 'file-loader',
+            },
+            {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 use: 'file-loader'
             },

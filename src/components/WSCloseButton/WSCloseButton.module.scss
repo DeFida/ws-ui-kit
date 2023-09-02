@@ -5,7 +5,7 @@
     background: none;
     border: 0;
     outline: none;
-    background-image: url(../../assets/closeButton_light.svg);
+    background-image: url('../../../images/closeButton_light.svg');
     transform: rotate(45deg);
     background-position: center;
     background-repeat: no-repeat;
@@ -19,5 +19,5 @@
 }
 
 .WSCloseButtonDark {
-    background-image: url(../../assets/closeButton_dark.svg);
+    background-image: url('../../../images/closeButton_dark.svg');
 }

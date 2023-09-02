@@ -36,6 +36,7 @@
     "style-loader": "^3.3.3",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
+    "url-loader": "^4.1.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
@@ -57,7 +58,8 @@
     "react-dom": "*"
   },
   "files": [
-    "dist"
+    "dist/",
+    "images/"
   ],
   "dependencies": {
     "@storybook/preset-scss": "^1.0.3",
