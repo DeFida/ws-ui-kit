@@ -5,6 +5,7 @@
     background: none;
     border: 0;
     outline: none;
+    background-image: url('../images/closeButton_light.svg');
     transform: rotate(45deg);
     background-position: center;
     background-repeat: no-repeat;
@@ -15,4 +16,8 @@
     &:hover {
         opacity: .75;
     }
+}
+
+.WSCloseButtonDark {
+    background-image: url('../images/closeButton_dark.svg');
 }

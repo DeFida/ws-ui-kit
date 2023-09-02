@@ -11,7 +11,7 @@ const WSCloseButton: FC<WSCloseButtonProps> = ({ className='', dark = false, ...
     const componentClassName = `${styles.WSCloseButton} ${dark ? styles.WSCloseButtonDark : '' } ${className}`;
 
     return (
-        <button className={componentClassName} style={ dark ? {backgroundImage: 'url("../../../images/closeButton_dark.svg")'} : {backgroundImage: 'url("../../../images/closeButton_light.svg")'} } {...props}></button>
+        <button className={componentClassName} {...props}></button>
     );
 };
 
