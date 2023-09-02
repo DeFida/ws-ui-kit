@@ -8,6 +8,7 @@
       "plugins": [{ "name": "typescript-plugin-css-modules" }],            /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
       "lib": [ "es2015", "dom" ],
       "outDir": "./dist/",
+      "baseUrl": "./",
       "sourceMap": true,
       "declaration": true
     },
