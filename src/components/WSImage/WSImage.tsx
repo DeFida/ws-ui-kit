@@ -12,7 +12,7 @@ interface WSImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
 }
 
-const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen = function(){}, width, objectFit='cover', height, className='', style, ...props }) => {
+const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen, width, objectFit='cover', height, className='', style, ...props }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -28,10 +28,10 @@ const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen = function(){},
         src={src}
         alt={alt}
         style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s', objectFit, ...style }}
-        className={`${styles.WSImage} ${className}`}
+        className={`${styles.WSImage} ${onPopupOpen && styles.clickable} ${className}`}
         width={width}
         height={height}
-        onClick={() => onPopupOpen(src)}
+        onClick={onPopupOpen ? () => onPopupOpen(src) : () => {}}
         {...props}
       />
   );

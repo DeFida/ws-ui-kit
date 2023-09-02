@@ -5,7 +5,7 @@ interface WSImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     width: number;
     height: number;
     className?: string;
-    onPopupOpen?: (src: string) => {};
+    onPopupOpen?: (src: string) => void;
     style?: object;
     objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
 }
