@@ -13,7 +13,6 @@
     .container {
         max-width: 900px;
         max-height: 90vh;
-        overflow: auto;
         background-color: white;
         border-radius: 1rem;
         padding: 3rem;
@@ -29,8 +28,8 @@
 
         .close {
             position: absolute;
-            top: .5rem;
-            right: .5rem;
+            top: .75rem;
+            right: .75rem;
             width: 30px;
             height: 30px;
         }

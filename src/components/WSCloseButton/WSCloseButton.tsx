@@ -1,18 +1,18 @@
 import React, { ButtonHTMLAttributes, FC } from 'react';
 import styles from './WSCloseButton.module.scss';
-import WSImage from '../WSImage/WSImage';
+import WSParagraph from '../WSParagraph/WSParagraph';
 
 interface WSCloseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    closeImage: string;
+    dark?: boolean;
     className?: string;
 }
 
-const WSCloseButton: FC<WSCloseButtonProps> = ({ className='', closeImage = '', ...props }) => {
+const WSCloseButton: FC<WSCloseButtonProps> = ({ className='', dark = false, ...props }) => {
 
-    const componentClassName = `${styles.WSCloseButton} ${className}`;
+    const componentClassName = `${styles.WSCloseButton} ${dark ? styles.WSCloseButtonDark : '' } ${className}`;
 
     return (
-        <button className={componentClassName} {...props}><WSImage src={closeImage} alt='close' width={40} height={40} className={`${styles.closeImage}`} /></button>    
+        <button className={componentClassName} {...props}>X</button>
     );
 };
 

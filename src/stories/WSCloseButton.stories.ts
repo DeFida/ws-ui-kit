@@ -17,6 +17,5 @@ type Story = StoryObj<typeof meta>;
 
 export const CloseButton: Story = {
   args: {
-    closeImage: 'https://www.weskill.kz/_next/static/media/popup_close.d3572268.svg'
   }
 };
