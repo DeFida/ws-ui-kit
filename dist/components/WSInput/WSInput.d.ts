@@ -4,12 +4,12 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     id: string;
     label: string;
-    value: string;
+    value: string | undefined;
     required?: boolean;
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    change: (value: string) => void;
+    change: (data: object) => void;
 }
 declare const WSInput: FC<WSInputProps>;
 export default WSInput;

@@ -14,7 +14,7 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    change: (data: object) => void;
+    change: (data: any) => void;
 }
 
 const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, change, intermediate=false, error=null, required=false, label, id, name, ...props }) => {
