@@ -7,7 +7,7 @@ interface WSImagePopupProps {
     image: string;
     onClose: () => void;
     className?: string;
-  }
+}
 
 const WSImagePopup: FC<WSImagePopupProps> = ({image, onClose, ...props }) => {
     return (

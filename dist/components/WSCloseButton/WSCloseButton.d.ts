@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 interface WSCloseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    closeImage: string;
+    dark?: boolean;
     className?: string;
 }
 declare const WSCloseButton: FC<WSCloseButtonProps>;

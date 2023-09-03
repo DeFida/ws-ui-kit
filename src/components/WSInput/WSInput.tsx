@@ -8,13 +8,13 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     id: string;
     label: string;
-    value: string;
+    value: string | undefined;
 
     required?: boolean;
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    change: (value: string) => void;
+    change: (data: object) => void;
 }
 
 const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, change, intermediate=false, error=null, required=false, label, id, name, ...props }) => {
@@ -36,7 +36,7 @@ const WSInput: FC<WSInputProps> = ({ className='', requiredMessage='', value, ch
     }
 
     function handleChange (e: React.ChangeEvent<HTMLInputElement>) {
-        change(e.target.value);
+        change(e.target);
         setErrorMessage(null)
     }
 
