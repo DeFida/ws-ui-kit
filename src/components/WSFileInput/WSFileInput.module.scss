@@ -1,0 +1,53 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
+.WSFileInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    @include textFormat(14px, 0);
+    color: $secondary-color;
+    position: relative;
+    .para {
+        padding: 1rem;
+        border: 1px solid $secondary-color;
+        border-radius: .5rem;
+        @include textFormat(14px, 0);
+        color: $secondary-color;
+        background: white;
+        cursor: pointer;
+    }
+
+    .Label {
+        position: absolute;
+        transform: translateY(-50%);
+        left: .4rem;
+        padding: 0 5px;    
+        background: white;
+        border-radius: 3px;
+        text-align: center;
+        @include textFormat(14px, 0);
+        color: $secondary-color;
+    }
+
+    .Label_focused {
+        color: $main-color;
+    }
+
+    .Error {
+        width: 100%; 
+        margin: .5rem 0 0;
+        font-size: 14px;
+        color: $secondary-color;
+    }
+}
+
+.Input {
+    display: none;
+}
+
+.WSFileInput_Intermediate {
+    margin: 0 0 2rem;
+}

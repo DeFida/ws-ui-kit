@@ -4,7 +4,7 @@ interface WSInputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
     id: string;
     label: string;
-    value: string | undefined;
+    value: string | number | undefined;
     required?: boolean;
     error?: string | null;
     requiredMessage?: string | null;

@@ -14,6 +14,7 @@ import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
 import WSCloseButton from './components/WSCloseButton/WSCloseButton';
 import WSImagePopup from './components/WSImagePopup/WSImagePopup';
+import WSFileInput from './components/WSFileInput/WSFileInput';
 
 export {
     WSButton,
@@ -28,6 +29,7 @@ export {
     WSLoadingIndicator,
     WSCloseButton,
     WSImagePopup,
+    WSFileInput,
 
     colorsStyles, 
     fontsStyles,
