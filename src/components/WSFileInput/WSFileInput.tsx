@@ -21,6 +21,12 @@ const WSFileInput: FC<WSFileInputProps> = ({ className='', requiredMessage='', r
 
     const [errorMessage, setErrorMessage] = useState<string | null>('')
     const [focused, setFocused] = useState(false);
+
+    const [inputLabel, setInputLabel] = useState('Загрузить файл');
+
+    const handleInputChange = () => {
+        setInputLabel('Загружено')
+    }
     
     useEffect(() => {
         setErrorMessage(error)
@@ -33,12 +39,14 @@ const WSFileInput: FC<WSFileInputProps> = ({ className='', requiredMessage='', r
         }
     }
 
+
+
     return (
         <div className={`${styles.WSFileInput} ${intermediate ? styles.WSFileInput_Intermediate : ''}`} >
             <p className={`${styles.Label} ${focused ? styles.Label_focused : ''}`}>{label} {required && '*'}</p>
 
-            <input type='file' onBlur={blured} onFocus={() => setFocused(true)} id={id} name={name} ref={ref} className={componentClassName} {...props} />
-            <label htmlFor={id} className={`${styles.para} ${colorsStyles.secondary}`}>Загрузить файл</label>
+            <input type='file' onBlur={blured} onFocus={() => setFocused(true)} id={id} name={name} ref={ref} className={componentClassName} onChange={handleInputChange} {...props} />
+            <label htmlFor={id} className={`${styles.para} ${colorsStyles.secondary}`}>{inputLabel}</label>
             {errorMessage && <WSParagraph className={`${colorsStyles.secondary} ${styles.Error}`}>{errorMessage}</WSParagraph>}
 
         </div>
