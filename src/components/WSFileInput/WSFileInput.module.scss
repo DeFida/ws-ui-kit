@@ -9,6 +9,7 @@
     position: relative;
     @include textFormat(14px, 0);
     color: $secondary-color;
+    border: 1px solid red;
     position: relative;
     .para {
         padding: 1rem;
@@ -18,7 +19,8 @@
         color: $secondary-color;
         background: white;
         cursor: pointer;
-        width: 100%;
+        width: calc(100% - 2rem);
+
     }
 
     .Label {
