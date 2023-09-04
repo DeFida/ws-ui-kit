@@ -15,6 +15,7 @@ import positionsStyles from './styles/fonts.module.scss';
 import WSCloseButton from './components/WSCloseButton/WSCloseButton';
 import WSImagePopup from './components/WSImagePopup/WSImagePopup';
 import WSFileInput from './components/WSFileInput/WSFileInput';
+import WSModal from './components/WSModal/WSModal';
 
 export {
     WSButton,
@@ -30,6 +31,7 @@ export {
     WSCloseButton,
     WSImagePopup,
     WSFileInput,
+    WSModal,
 
     colorsStyles, 
     fontsStyles,
