@@ -14,4 +14,5 @@ import positionsStyles from './styles/fonts.module.scss';
 import WSCloseButton from './components/WSCloseButton/WSCloseButton';
 import WSImagePopup from './components/WSImagePopup/WSImagePopup';
 import WSFileInput from './components/WSFileInput/WSFileInput';
-export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, WSFileInput, colorsStyles, fontsStyles, positionsStyles, };
+import WSModal from './components/WSModal/WSModal';
+export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, WSFileInput, WSModal, colorsStyles, fontsStyles, positionsStyles, };

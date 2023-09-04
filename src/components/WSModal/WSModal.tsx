@@ -7,16 +7,14 @@ import WSCloseButton from '../WSCloseButton/WSCloseButton';
 
 interface WSModal {
     message: string;
-    title: string;
     onClose: () => void;
 }
 
-const WSModal: FC<WSModal> = ({message, title, onClose}) => {
+const WSModal: FC<WSModal> = ({message, onClose}) => {
     return (
         <div className={`${styles.WSModal}`}>
-            <WSCloseButton dark onClick={onClose} />
-            <WSHeading type='h1'>{title}</WSHeading>
-            <WSParagraph>{message}</WSParagraph>
+            <WSCloseButton dark onClick={onClose} className={`${styles.close}`} />
+            <WSParagraph style={{margin: 0}}>{message}</WSParagraph>
         </div>
     );
 };
