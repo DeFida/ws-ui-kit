@@ -8,7 +8,6 @@ interface WSFileInputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    ref?: any;
 }
 declare const WSFileInput: FC<WSFileInputProps>;
 export default WSFileInput;
