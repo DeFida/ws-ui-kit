@@ -1,5 +1,11 @@
-import React, { FC, InputHTMLAttributes, useEffect, useState } from 'react';
-import inputStyles from '../WSInput/WSInput.module.scss';
+import React, {
+    FC,
+    InputHTMLAttributes,
+    useEffect,
+    useState,
+    forwardRef,
+    Ref,
+} from 'react';
 import styles from './WSFileInput.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
 import colorsStyles from '../../styles/colors.module.scss';
@@ -13,44 +19,80 @@ interface WSFileInputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: string | null;
     requiredMessage?: string | null;
     intermediate?: boolean;
-    ref?: any;
 }
 
-const WSFileInput: FC<WSFileInputProps> = ({ className='', requiredMessage='', ref, intermediate=false, error=null, required=false, label, id, name, ...props }) => {
-    let componentClassName = `${styles.Input} ${className}`;
+const WSFileInput: FC<WSFileInputProps> = forwardRef<
+    HTMLInputElement,
+    WSFileInputProps
+    >(
+    (
+        {
+        className = '',
+        requiredMessage = '',
+        intermediate = false,
+        error = null,
+        required = false,
+        label,
+        id,
+        name,
+        ...props
+        },
+        ref: Ref<HTMLInputElement>
+    ) => {
+        let componentClassName = `${styles.Input} ${className}`;
 
-    const [errorMessage, setErrorMessage] = useState<string | null>('')
-    const [focused, setFocused] = useState(false);
+        const [errorMessage, setErrorMessage] = useState<string | null>('');
+        const [focused, setFocused] = useState(false);
 
-    const [inputLabel, setInputLabel] = useState('Загрузить файл');
+        const [inputLabel, setInputLabel] = useState('Загрузить файл');
 
-    const handleInputChange = () => {
-        setInputLabel('Загружено')
-    }
-    
-    useEffect(() => {
-        setErrorMessage(error)
-    }, [error])
+        const handleInputChange = () => {
+        setInputLabel('Загружено');
+        };
 
-    function blured() {
-        setFocused(false)
+        useEffect(() => {
+        setErrorMessage(error);
+        }, [error]);
+
+        function blured() {
+        setFocused(false);
         if (required) {
-            setErrorMessage(requiredMessage)
+            setErrorMessage(requiredMessage);
         }
-    }
+        }
 
+        return (
+        <div
+            className={`${styles.WSFileInput} ${
+            intermediate ? styles.WSFileInput_Intermediate : ''
+            }`}
+        >
+            <p className={`${styles.Label} ${focused ? styles.Label_focused : ''}`}>
+            {label} {required && '*'}
+            </p>
 
-
-    return (
-        <div className={`${styles.WSFileInput} ${intermediate ? styles.WSFileInput_Intermediate : ''}`} >
-            <p className={`${styles.Label} ${focused ? styles.Label_focused : ''}`}>{label} {required && '*'}</p>
-
-            <input type='file' onBlur={blured} onFocus={() => setFocused(true)} id={id} name={name} ref={ref} className={componentClassName} onChange={handleInputChange} {...props} />
-            <label htmlFor={id} className={`${styles.para} ${colorsStyles.secondary}`}>{inputLabel}</label>
-            {errorMessage && <WSParagraph className={`${colorsStyles.secondary} ${styles.Error}`}>{errorMessage}</WSParagraph>}
-
+            <input
+            type='file'
+            onBlur={blured}
+            onFocus={() => setFocused(true)}
+            id={id}
+            name={name}
+            ref={ref}
+            className={componentClassName}
+            onChange={handleInputChange}
+            {...props}
+            />
+            <label htmlFor={id} className={`${styles.para} ${colorsStyles.secondary}`}>
+            {inputLabel}
+            </label>
+            {errorMessage && (
+            <WSParagraph className={`${colorsStyles.secondary} ${styles.Error}`}>
+                {errorMessage}
+            </WSParagraph>
+            )}
         </div>
-  );
-}
+        );
+    }
+);
 
 export default WSFileInput;

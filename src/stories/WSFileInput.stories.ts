@@ -20,7 +20,6 @@ export const Input: Story = {
     label: "Имя",
     name: "test",
     id: "test",
-    ref:{},
   },
 };
 
@@ -30,7 +29,6 @@ export const InputWithError: Story = {
     name: "test",
     id: "test",
     error: "You are an error",
-    ref:{},
   },
 };
 
@@ -39,7 +37,6 @@ export const InputRequired: Story = {
     label: "Пароль",
     name: "test",
     id: "test",
-    ref:{},
     requiredMessage: 'Поле должно быть заполнено',
     required: true,
     intermediate: true,
