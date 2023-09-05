@@ -24,7 +24,7 @@
         border: 1px solid $secondary-color;
         border-radius: 5px;
 
-        
+        background-color: white;
 
         .result {
             width: 100%;
@@ -41,6 +41,10 @@
                 border: 0;
             }
         }
+    }
+
+    .intermediateResults {
+        top: calc(100% - 2.75rem);
     }
 }
 

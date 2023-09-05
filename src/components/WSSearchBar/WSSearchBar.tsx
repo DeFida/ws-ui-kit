@@ -72,7 +72,7 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
         <div className={`${styles.WSSearchBar}`}>
             <WSInput name='searchInput' intermediate={intermediate} autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown}  {...props} />
             {showResults && (
-                <ul className={`${styles.results}`}>
+                <ul className={`${styles.results}  ${intermediate && styles.intermediateResults}`}>
                     {
                     Array.from(results).length < 1 && query.length !== 0
                         ?
