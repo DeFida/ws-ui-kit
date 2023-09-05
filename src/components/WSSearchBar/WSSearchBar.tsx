@@ -4,11 +4,10 @@ import WSInput from '../WSInput/WSInput';
 import styles from './WSSearchBar.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
 
-interface SearchResult {
+export interface SearchResult {
     id: string;
     name: string;
-    // Add other relevant fields as needed
-  }
+}
   
   interface CustomSearchProps {
     placeholder: string;

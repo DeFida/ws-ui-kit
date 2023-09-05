@@ -17,6 +17,7 @@ import WSSearchBar from './components/WSSearchBar/WSSearchBar';
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
+import { SearchResult } from './components/WSSearchBar/WSSearchBar';
 
 export {
     WSButton,
@@ -34,6 +35,7 @@ export {
     WSFileInput,
     WSModal,
     WSSearchBar,
+    SearchResult,
 
     colorsStyles, 
     fontsStyles,
