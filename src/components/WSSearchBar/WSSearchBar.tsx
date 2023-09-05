@@ -50,16 +50,14 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, defaultResult=null, o
     };
     
     const handleInputBlur = () => {
-        // Delay hiding the results to allow for selection
         setTimeout(() => {
           setShowResults(false);
         }, 200);
     };
 
     const handleFocus = () => {
-        if (defaultResult){
+        if (!showResults && defaultResult){
             setShowResults(true)
-            console.log("WAS FOCUSED");
         }
     }
 
