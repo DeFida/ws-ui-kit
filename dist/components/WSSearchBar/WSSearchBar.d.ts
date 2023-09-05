@@ -9,6 +9,7 @@ interface CustomSearchProps {
     onSelect: (result: SearchResult) => void;
     label: string;
     intermediate?: boolean;
+    defaultResult?: SearchResult[] | null;
 }
 declare const WSSearchBar: FC<CustomSearchProps>;
 export default WSSearchBar;

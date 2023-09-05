@@ -20,15 +20,15 @@ export interface SearchResult {
   
 
 const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, defaultResult=null, onSearch, onSelect, label, intermediate=false, ...props }) => {
-
+    
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<SearchResult[]>(defaultResult ? defaultResult : []);
     const [showResults, setShowResults] = useState(false);
-  
+    
     useEffect(() => {
         const search = async () => {
           if (query.trim() === '') {
-            setResults([]);
+            setResults(defaultResult ? defaultResult : []);
             setShowResults(false)
             return;
           }
