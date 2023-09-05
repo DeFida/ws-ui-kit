@@ -17,7 +17,7 @@ export interface SearchResult {
   }
   
 
-const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, label }) => {
+const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, label, ...props }) => {
 
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<SearchResult[]>([]);
@@ -69,7 +69,7 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
 
     return (
         <div className={`${styles.WSSearchBar}`}>
-            <WSInput name='searchInput' autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown} />
+            <WSInput name='searchInput' autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown}  {...props} />
             {showResults && (
                 <ul className={`${styles.results}`}>
                     {
