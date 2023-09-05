@@ -59,6 +59,7 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, defaultResult=null, o
     const handleFocus = () => {
         if (defaultResult){
             setShowResults(true)
+            console.log("WAS FOCUSED");
         }
     }
 
