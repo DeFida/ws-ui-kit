@@ -15,13 +15,14 @@ export interface SearchResult {
     onSelect: (result: SearchResult) => void;
     label: string;
     intermediate?: boolean;
+    defaultResult?: SearchResult[] | null;
   }
   
 
-const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, label, intermediate=false, ...props }) => {
+const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, defaultResult=null, onSearch, onSelect, label, intermediate=false, ...props }) => {
 
     const [query, setQuery] = useState('');
-    const [results, setResults] = useState<SearchResult[]>([]);
+    const [results, setResults] = useState<SearchResult[]>(defaultResult ? defaultResult : []);
     const [showResults, setShowResults] = useState(false);
   
     useEffect(() => {
@@ -55,6 +56,12 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
         }, 200);
     };
 
+    const handleFocus = () => {
+        if (defaultResult){
+            setShowResults(true)
+        }
+    }
+
     const handleSelectResult = (result: SearchResult) => {
         setQuery(result.name); // Populate input with selected result
         onSelect(result); // Callback to handle the selected result
@@ -67,10 +74,9 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
         }
     };
 
-
     return (
         <div className={`${styles.WSSearchBar}`}>
-            <WSInput name='searchInput' intermediate={intermediate} autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown}  {...props} />
+            <WSInput name='searchInput' intermediate={intermediate} onFocus={handleFocus} autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown}  {...props} />
             {showResults && (
                 <ul className={`${styles.results}  ${intermediate && styles.intermediateResults}`}>
                     {
