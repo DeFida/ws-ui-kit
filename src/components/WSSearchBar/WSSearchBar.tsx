@@ -1,0 +1,93 @@
+import React, { ChangeEvent, FC, KeyboardEvent, useEffect, useState } from 'react';
+
+import WSInput from '../WSInput/WSInput';
+import styles from './WSSearchBar.module.scss';
+import WSParagraph from '../WSParagraph/WSParagraph';
+
+interface SearchResult {
+    id: string;
+    name: string;
+    // Add other relevant fields as needed
+  }
+  
+  interface CustomSearchProps {
+    placeholder: string;
+    onSearch: (query: string) => Promise<SearchResult[]>;
+    onSelect: (result: SearchResult) => void;
+    label: string;
+  }
+  
+
+const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, label }) => {
+
+    const [query, setQuery] = useState('');
+    const [results, setResults] = useState<SearchResult[]>([]);
+    const [showResults, setShowResults] = useState(false);
+  
+    useEffect(() => {
+        const search = async () => {
+          if (query.trim() === '') {
+            setResults([]);
+            setShowResults(false)
+            return;
+          }
+    
+          try {
+            const searchResults = await onSearch(query);
+            setResults(searchResults);
+            setShowResults(true);
+          } catch (error) {
+            console.error('Search error:', error);
+          }
+        };
+    
+        search();
+    }, [query, onSearch]);
+    
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setQuery(e.target.value);
+    };
+    
+    const handleInputBlur = () => {
+        // Delay hiding the results to allow for selection
+        setTimeout(() => {
+          setShowResults(false);
+        }, 200);
+    };
+
+    const handleSelectResult = (result: SearchResult) => {
+        setQuery(result.name); // Populate input with selected result
+        onSelect(result); // Callback to handle the selected result
+        setShowResults(false);
+    };
+
+    const handleInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && results.length > 0) {
+          handleSelectResult(results[0]); // Select the first result on Enter key press
+        }
+    };
+
+
+    return (
+        <div className={`${styles.WSSearchBar}`}>
+            <WSInput name='searchInput' autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown} />
+            {showResults && (
+                <ul className={`${styles.results}`}>
+                    {
+                    Array.from(results).length < 1 && query.length !== 0
+                        ?
+                            <WSParagraph style={{margin: 0, padding: '.5rem'}}>Нет данных</WSParagraph>
+                        :
+                            Array.from(results).map((result) => {
+                                return  <li key={result.id} className={`${styles.result}`} onClick={() => handleSelectResult(result)}>
+                                            {result.name}
+                                        </li>
+                            })
+                    }
+                </ul>
+            )}
+        </div>
+    );
+};
+
+export default WSSearchBar;
