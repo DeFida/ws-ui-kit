@@ -1,5 +1,5 @@
 import { FC } from 'react';
-interface SearchResult {
+export interface SearchResult {
     id: string;
     name: string;
 }

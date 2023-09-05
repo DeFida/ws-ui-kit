@@ -16,4 +16,5 @@ import WSSearchBar from './components/WSSearchBar/WSSearchBar';
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
-export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, WSFileInput, WSModal, WSSearchBar, colorsStyles, fontsStyles, positionsStyles, };
+import { SearchResult } from './components/WSSearchBar/WSSearchBar';
+export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, WSFileInput, WSModal, WSSearchBar, SearchResult, colorsStyles, fontsStyles, positionsStyles, };
