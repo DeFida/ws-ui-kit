@@ -17,10 +17,12 @@ import { SearchResult } from './components/WSSearchBar/WSSearchBar';
 import WSSelect from './components/WSSelect/WSSelect';
 import { SelectOption } from './components/WSSelect/WSSelect';
 import WSCourseCard from './components/WSCourseCard/WSCourseCard';
+import WSModuleCard from './components/WSModuleCard/WSModuleCard';
 
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
+
 
 
 
@@ -44,6 +46,8 @@ export {
     WSSelect,
     SelectOption,
     WSCourseCard,
+    WSModuleCard,
+
 
     colorsStyles, 
     fontsStyles,
