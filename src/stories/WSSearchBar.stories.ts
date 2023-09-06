@@ -21,6 +21,6 @@ export const Input: Story = {
     onSearch: async (query: string) => {return []},
     onSelect: (result) => {},
     placeholder: "Hello there",
-    defaultResult: [{id: '123', name: 'Web'}, {id: '1234', name: 'Python'}]
+    defaultResults: [{id: '123', name: 'Web'}, {id: '1234', name: 'Python'}]
   },
 };
