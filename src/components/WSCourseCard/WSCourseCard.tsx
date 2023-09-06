@@ -4,7 +4,6 @@ import styles from './WSCourseCard.module.scss';
 
 import WSHeading from '../WSHeading/WSHeading';
 import WSParagraph from '../WSParagraph/WSParagraph';
-import WSImage from '../WSImage/WSImage';
 import fontsStyles from '../../styles/fonts.module.scss';
 
 type CourseType = {
@@ -25,13 +24,17 @@ const WSCourseCard: FC<CourseProp> = ({course, className, ...props}) => {
     const componentClassnames = `${styles.WSCourseCard} ${className}`
 
     return (
-        <a href={`/courses/${course.linkName}`} className={componentClassnames}>
-            <WSHeading type='h2' className={`${fontsStyles.regular} ${styles.cardTitle}`}>{course.name}</WSHeading>
-            <WSImage src={course.previewImage} width={0} height={0} className={`${styles.cardImage}`} alt='hoverImage' />
-            <WSImage src={course.previewImageOnHover} width={0} height={0} className={`${styles.onHoverCardImage}`} alt='hoverImage' />
-            
-            <WSParagraph className={`${styles.description}`}>{course.previewDescription}</WSParagraph>
+        <a href={`/courses/${course.linkName}`} className={`${styles.wrapper}`}>
+            <div className={componentClassnames}>
+                <WSHeading type='h2' className={`${fontsStyles.regular} ${styles.name}`}>{course.name}</WSHeading>
+                <div className={`${styles.overlay}`}></div>
+
+                <img src={course.previewImage} alt='preview' className={`${styles.cardImage}`} />
+                <img src={course.previewImageOnHover} alt='preview' className={`${styles.cardImageOnHover}`} />
+                <WSParagraph className={`${styles.description}`}>{course.previewDescription}</WSParagraph>
+            </div>
         </a>
+        
     );
 };
 

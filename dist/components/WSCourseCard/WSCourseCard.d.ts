@@ -1,11 +1,14 @@
 import { FC } from 'react';
-interface CourseProp {
+type CourseType = {
     id: string;
     name: string;
     linkName: string;
     previewImage: string;
     previewImageOnHover: string;
     previewDescription: string;
+};
+interface CourseProp {
+    course: CourseType;
     className?: string;
 }
 declare const WSCourseCard: FC<CourseProp>;
