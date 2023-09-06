@@ -19,6 +19,7 @@ export const Select: Story = {
   args: {
     onSelect: (result) => {},
     selectedOption: null,
-    options: [{value: 'hdgj', label: 'gsd'}, {value: 'jguc', label: 'jshbtb'}]
+    options: [{value: 'hdgj', label: 'gsd'}, {value: 'jguc', label: 'jshbtb'}],
+    label: "Choose it"
   },
 };
