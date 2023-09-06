@@ -9,7 +9,6 @@ import fontsStyles from '../../styles/fonts.module.scss';
 type CourseType = {
     id: string;
     name: string;
-    linkName: string;
     previewImage: string;
     previewImageOnHover: string;
     previewDescription: string;
@@ -18,13 +17,14 @@ type CourseType = {
 interface CourseProp {
     course: CourseType;
     className?: string;
+    link: string;
 }
 
-const WSCourseCard: FC<CourseProp> = ({course, className, ...props}) => {
+const WSCourseCard: FC<CourseProp> = ({course, className, link, ...props}) => {
     const componentClassnames = `${styles.WSCourseCard} ${className}`
 
     return (
-        <a href={`/courses/${course.linkName}`} className={`${styles.wrapper}`}>
+        <a href={link} className={`${styles.wrapper}`}>
             <div className={componentClassnames}>
                 <WSHeading type='h2' className={`${fontsStyles.regular} ${styles.name}`}>{course.name}</WSHeading>
                 <div className={`${styles.overlay}`}></div>
