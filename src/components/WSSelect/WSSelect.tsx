@@ -11,9 +11,11 @@ interface CustomSelectProps {
   options: SelectOption[];
   onSelect: (selectedOption: SelectOption) => void;
   selectedOption: SelectOption | null;
+  label: string;
+  intermediate?: boolean;
 }
 
-const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, selectedOption }) => {
+const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, intermediate, label, selectedOption }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -26,9 +28,9 @@ const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, selectedOpti
   };
 
   return (
-    <div className={`${styles.WSSelect}`}>
+    <div className={`${styles.WSSelect} ${intermediate ? styles.intermediate : ''}`}>
       <div className={`${styles.header} ${isOpen ? styles.open : ''}`} onClick={toggleDropdown}>
-        {selectedOption ? selectedOption.label : 'Select an option'}
+        {selectedOption ? selectedOption.label : label}
       </div>
       {isOpen && (
         <ul className={`${styles.options}`}>
