@@ -13,11 +13,14 @@ import WSImagePopup from './components/WSImagePopup/WSImagePopup';
 import WSFileInput from './components/WSFileInput/WSFileInput';
 import WSModal from './components/WSModal/WSModal';
 import WSSearchBar from './components/WSSearchBar/WSSearchBar';
+import { SearchResult } from './components/WSSearchBar/WSSearchBar';
+import WSSelect from './components/WSSelect/WSSelect';
+import { SelectOption } from './components/WSSelect/WSSelect';
 
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
-import { SearchResult } from './components/WSSearchBar/WSSearchBar';
+
 
 export {
     WSButton,
@@ -36,6 +39,8 @@ export {
     WSModal,
     WSSearchBar,
     SearchResult,
+    WSSelect,
+    SelectOption,
 
     colorsStyles, 
     fontsStyles,
