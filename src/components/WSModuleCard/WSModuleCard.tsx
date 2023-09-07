@@ -7,7 +7,7 @@ import WSHeading from '../WSHeading/WSHeading';
 import fontsStyles from '../../styles/fonts.module.scss';
 
 type ModuleType = {
-    id: string;
+    _id: string;
     name: string;
     duration: number;
     previewImage: string;
@@ -24,7 +24,7 @@ const WSModuleCard: FC<ModuleCardProp> = ({module, className, onClick, ...props}
 
     return (
         <div className={componentClassnames} onClick={onClick} {...props}>
-            <WSImage src={module.previewImage} alt='previewImageModule' width={0} height={0} className={`${styles.cardImage}`}/>
+            <WSImage src={module.previewImage} alt='previewImageModule' width={288} height={300} className={`${styles.cardImage}`}/>
             <WSHeading type='h2' className={`${fontsStyles.regular} ${styles.cardName}`}>{module.name}</WSHeading>
         </div>
     );

@@ -7,7 +7,7 @@ import WSParagraph from '../WSParagraph/WSParagraph';
 import fontsStyles from '../../styles/fonts.module.scss';
 
 type CourseType = {
-    id: string;
+    _id: string;
     name: string;
     previewImage: string;
     previewImageOnHover: string;
