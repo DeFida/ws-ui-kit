@@ -19,7 +19,16 @@ export const Select: Story = {
   args: {
     onSelect: (result) => {},
     selectedOption: null,
-    options: [{value: 'hdgj', label: 'gsd'}, {value: 'jguc', label: 'jshbtb'}],
+    options: [{value: 'hdgj', label: 'gsd'}, {value: 'jguc', label: 'jshbtb'}, {value: 'hdgj', label: 'gsd'}],
+    label: "Choose it"
+  },
+};
+
+export const SelectManyOptions: Story = {
+  args: {
+    onSelect: (result) => {},
+    selectedOption: null,
+    options: [{value: 'hdgj', label: 'gsd'}, {value: 'jguc', label: 'jshbtb'}, {value: 'hdgj', label: 'gsd'}, {value: 'jguc', label: 'jshbtb'}, {value: 'hdgj', label: 'gsd'},{value: 'hdgj', label: 'gsd'},{value: 'hdgj', label: 'gsd'},],
     label: "Choose it"
   },
 };

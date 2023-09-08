@@ -1,6 +1,6 @@
 import { FC } from 'react';
 type CourseType = {
-    id: string;
+    _id: string;
     name: string;
     previewImage: string;
     previewImageOnHover: string;

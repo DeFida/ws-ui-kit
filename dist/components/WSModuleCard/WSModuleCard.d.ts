@@ -1,6 +1,6 @@
 import { FC } from 'react';
 type ModuleType = {
-    id: string;
+    _id: string;
     name: string;
     duration: number;
     previewImage: string;

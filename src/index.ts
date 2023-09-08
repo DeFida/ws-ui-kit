@@ -18,10 +18,12 @@ import WSSelect from './components/WSSelect/WSSelect';
 import { SelectOption } from './components/WSSelect/WSSelect';
 import WSCourseCard from './components/WSCourseCard/WSCourseCard';
 import WSModuleCard from './components/WSModuleCard/WSModuleCard';
+import WSSidebar from './components/WSSidebar/WSSidebar';
 
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
+
 
 
 
@@ -47,6 +49,7 @@ export {
     SelectOption,
     WSCourseCard,
     WSModuleCard,
+    WSSidebar,
 
 
     colorsStyles, 

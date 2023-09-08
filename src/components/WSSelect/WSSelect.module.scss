@@ -31,8 +31,8 @@
         border: 1px solid $secondary-color;
         border-top: none;
         border-radius: 0 0 4px 4px;
-        max-height: 120px;
-        overflow-y: auto;
+        max-height: 160px;
+        overflow-y: scroll;
         position: absolute;
         z-index: 15;
         top: 100%;
@@ -46,16 +46,18 @@
     }
 
     .option {
-        padding: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease;
         @include textFormat($regular-size-desktop, 0, $secondary-color);
         width: 100%;
-        text-align: center;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .selected {
-        background-color: $main-color;
+        background-color: rgba($main-color, .5);
         color: #fff;
     }
       
