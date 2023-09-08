@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import styles from './WSSelect.module.scss';
+import WSParagraph from '../WSParagraph/WSParagraph';
 
 export interface SelectOption {
   value: string;
@@ -43,7 +44,7 @@ const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, intermediate
               className={`${styles.option} ${selectedOption === option ? styles.selected : ''}`}
               onClick={() => handleOptionSelect(option)}
             >
-              {option.label}
+              <WSParagraph style={{padding: '1rem 0', margin: '0'}}>{option.label}</WSParagraph>
             </li>
           ))}
         </ul>
