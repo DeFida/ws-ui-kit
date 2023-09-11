@@ -23,6 +23,7 @@ import WSSidebar from './components/WSSidebar/WSSidebar';
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
+import WSMarkdownRender from './components/WSMarkdownRender/WSMarkdownRender';
 
 
 
@@ -50,6 +51,7 @@ export {
     WSCourseCard,
     WSModuleCard,
     WSSidebar,
+    WSMarkdownRender,
 
 
     colorsStyles, 

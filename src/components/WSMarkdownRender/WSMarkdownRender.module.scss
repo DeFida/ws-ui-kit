@@ -1,0 +1,61 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
+.content {
+    width: 700px;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+
+    .paragraph {
+        width: 700px;
+    }
+}
+
+.markdown {
+    width: 100%;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $main-color;
+    }
+    
+    h1 {
+        @include textFormat(3rem, 0 0 2rem, $main-color);
+    }
+
+    ul, ol {
+        list-style-type: disc;
+    }
+    
+    li {
+        width: 100%;
+        display: flex;
+    }
+    
+    h2 {
+        @include textFormat(1.5rem, 0 0 1rem, $main-color);
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        @include textFormat(1.25rem, 0 0 1.25rem, $main-color);
+    }
+
+    p {
+        @include textFormat($regular-size-desktop, 0 0 1rem, $main-color);
+        width: 700px;
+        text-align: justify;
+        line-height: 1.5rem;
+    }
+
+    img {
+        width: 700px;
+        border-radius: 1rem;
+        margin: 2rem 0;
+        object-fit: cover;
+    }
+}
+

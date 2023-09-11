@@ -1,0 +1,43 @@
+@import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
+
+.lessonImage {
+    width: 700px;
+    height: auto;
+}
+
+
+.WSCodeBlock {
+    width: calc(700px - 2rem);
+    background-color: rgba($gray-color, .5);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+
+    position: relative;
+
+    .WSCopyButton {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: .25rem .5rem;
+        background: none;
+        cursor: pointer;
+        border: 1px solid rgba($main-color, .3);
+        border-radius: .25rem;
+        transition: .3s;
+        color: $main-color;
+
+        &:hover {
+            background-color: $main-color;
+            color: $white-color;
+        }
+    }
+}
+
+.WSCodeBlockOneBacktick {
+    padding: .25rem .5rem;
+    width: max-content;
+
+    border-radius: .25rem;
+    background-color: rgba($gray-color, 1);
+}
