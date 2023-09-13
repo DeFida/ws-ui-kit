@@ -10,6 +10,9 @@ interface WSImagePopupProps {
 }
 
 const WSImagePopup: FC<WSImagePopupProps> = ({image, onClose, ...props }) => {
+
+
+
     return (
         <div className={`${styles.WSImagePopup}`} {...props}>
             <div className={`${styles.container}`}>
