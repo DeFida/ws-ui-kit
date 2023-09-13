@@ -22,4 +22,5 @@ import WSSidebar from './components/WSSidebar/WSSidebar';
 import colorsStyles from './styles/colors.module.scss';
 import fontsStyles from './styles/fonts.module.scss';
 import positionsStyles from './styles/fonts.module.scss';
-export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, WSFileInput, WSModal, WSSearchBar, SearchResult, WSSelect, SelectOption, WSCourseCard, WSModuleCard, WSSidebar, colorsStyles, fontsStyles, positionsStyles, };
+import WSMarkdownRender from './components/WSMarkdownRender/WSMarkdownRender';
+export { WSButton, WSHeading, WSInput, WSParagraph, WSForm, WSImage, WSHeader, WSFooter, WSLink, WSLoadingIndicator, WSCloseButton, WSImagePopup, WSFileInput, WSModal, WSSearchBar, SearchResult, WSSelect, SelectOption, WSCourseCard, WSModuleCard, WSSidebar, WSMarkdownRender, colorsStyles, fontsStyles, positionsStyles, };
