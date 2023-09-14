@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './WSSelect.module.scss';
 import WSParagraph from '../WSParagraph/WSParagraph';
@@ -19,11 +19,15 @@ interface CustomSelectProps {
 const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, intermediate, label, selectedOption=null }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const selectRef = useRef<HTMLDivElement | null>(null)
+
   const [currentLabel, setCurrentLabel] = useState<SelectOption>(selectedOption ? selectedOption : {value: '', label: label})
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  
 
   const handleOptionSelect = (option: SelectOption) => {
     onSelect(option);
@@ -31,8 +35,31 @@ const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, intermediate
     setCurrentLabel(option)
   };
 
+  useEffect(() => {
+    const closeDropdown = () => {
+      setIsOpen(false);
+    }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    };
+
+    // Attach the click event listener when the component mounts
+    document.addEventListener('click', handleClickOutside);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+
+  }, [])
+
+
+
   return (
-    <div className={`${styles.WSSelect} ${intermediate ? styles.intermediate : ''}`}>
+    <div className={`${styles.WSSelect} ${intermediate ? styles.intermediate : ''}`} ref={selectRef}>
       <div className={`${styles.header} ${isOpen ? styles.open : ''}`} onClick={toggleDropdown}>
         {currentLabel.label}
       </div>
