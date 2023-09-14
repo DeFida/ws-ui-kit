@@ -1,0 +1,25 @@
+.element {
+    width: calc(100% - 2rem);
+    border: 1px solid rgba($main-color, .2);
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: -2px 4px 6px 2px rgba(4, 30, 66, 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    transition: .3s;
+
+    
+
+    &:hover {
+        background-color: $secondary-color;
+        transform: translateY(-3px);
+    }
+
+    &:hover .id {
+        color: white;
+    }
+
+    &:hover .name {
+        color: white;
+    }
+}
