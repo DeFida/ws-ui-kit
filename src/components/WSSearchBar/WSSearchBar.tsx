@@ -79,7 +79,7 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
 
 
     const handleSelectResult = (result: SearchResult) => {
-        setQuery(result.name); // Populate input with selected result
+        setQuery(''); // Populate input with selected result
         onSelect(result); // Callback to handle the selected result
         setShowResults(false);
     };
