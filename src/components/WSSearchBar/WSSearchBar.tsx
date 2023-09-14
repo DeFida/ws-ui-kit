@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, KeyboardEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, FC, KeyboardEvent, useEffect, useRef, useState } from 'react';
 
 import WSInput from '../WSInput/WSInput';
 import styles from './WSSearchBar.module.scss';
@@ -23,6 +23,8 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<SearchResult[]>([]);
     const [showResults, setShowResults] = useState(false);
+
+    const searchRef = useRef<HTMLDivElement | null>(null);
     
     useEffect(() => {
         const search = async () => {
@@ -54,6 +56,27 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
         }, 200);
     };
 
+    useEffect(() => {
+      const closeDropdown = () => {
+        setShowResults(false);
+      }
+  
+      const handleClickOutside = (event: MouseEvent) => {
+        if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+          closeDropdown();
+        }
+      };
+  
+      // Attach the click event listener when the component mounts
+      document.addEventListener('click', handleClickOutside);
+  
+      // Clean up the event listener when the component unmounts
+      return () => {
+        document.removeEventListener('click', handleClickOutside);
+      };
+  
+    }, [])
+
 
     const handleSelectResult = (result: SearchResult) => {
         setQuery(result.name); // Populate input with selected result
@@ -68,7 +91,7 @@ const WSSearchBar: FC<CustomSearchProps> = ({ placeholder, onSearch, onSelect, l
     };
 
     return (
-        <div className={`${styles.WSSearchBar}`}>
+        <div className={`${styles.WSSearchBar}`} ref={searchRef}>
             <WSInput name='searchInput' intermediate={intermediate} autoComplete='off' id='searchInput' placeholder={placeholder} label={label} value={query} change={() => {}} onChange={handleInputChange} onBlur={handleInputBlur} onKeyDown={handleInputKeyDown}  {...props} />
             {showResults && (
                 <ul className={`${styles.results}  ${intermediate && styles.intermediateResults}`}>
