@@ -23,6 +23,7 @@ interface WSSidebarProp {
     module: ModuleProp | null;
     onModuleClick: () => void;
     topics: TopicProp[];
+    openTopics: TopicProp[];
     onTopicClick: (topicId: string) => void;
 }
 declare const WSSidebar: FC<WSSidebarProp>;
