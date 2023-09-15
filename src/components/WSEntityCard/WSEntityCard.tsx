@@ -10,9 +10,9 @@ interface WSEntityCardProps {
     type: string;
 }
 
-const WSEntityCard: FC<WSEntityCardProps> = ({entity, onClick, type}) => {
+const WSEntityCard: FC<WSEntityCardProps> = ({entity, onClick, type, ...props}) => {
     return  (
-        <div className={`${styles.element}`} onClick={onClick}>
+        <div className={`${styles.element}`} onClick={onClick} {...props}>
             <WSHeading type='h2' className={`${fontsStyles.regular} ${styles.name}`}>Название: {entity.name}</WSHeading>
             <WSParagraph className={`${styles.id}`}>{type} ID: {entity._id}</WSParagraph>
         </div>
