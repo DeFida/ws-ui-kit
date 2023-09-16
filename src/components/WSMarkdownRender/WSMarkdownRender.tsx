@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, HTMLProps, ReactNode, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import styles from './WSMarkdownRender.module.scss';
 import gfm from 'remark-gfm';
@@ -10,7 +10,7 @@ import colorsStyles from '../../styles/colors.module.scss'
 
 
 
-interface WSMarkdownRenderProps {
+interface WSMarkdownRenderProps extends HTMLProps<HTMLDivElement> {
     content: any;
     onPopupOpen: (src: string) => void;
 }
