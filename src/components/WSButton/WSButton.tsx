@@ -6,13 +6,14 @@ interface WSButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     reversed?: boolean;
     action?: boolean;
     className?: string;
+    type?: "submit" | "reset" | "button" | undefined;
 }
 
-const WSButton: FC<WSButtonProps> = ({ children, className='', reversed = false, action = false, ...props }) => {
+const WSButton: FC<WSButtonProps> = ({ children, className='', type='button', reversed = false, action = false, ...props }) => {
     let componentClassName = `${styles.WSRegularButton} ${className} ${action ? styles.action : ''} ${reversed ? action ? styles.actionReversed : styles.reversed : ''}`;
     
     return (
-        <button className={componentClassName} {...props}>{children}</button>
+        <button className={componentClassName} type={type} {...props}>{children}</button>
     )
 };
 

@@ -24,7 +24,7 @@ const WSStrong: FC<WSStrongProps> = ({children}) => {
 }
 
 
-const WSMarkdownRender: React.FC<WSMarkdownRenderProps> = ({content, onPopupOpen}) => {
+const WSMarkdownRender: React.FC<WSMarkdownRenderProps> = ({content, onPopupOpen, ...props}) => {
     
     const myComponents = {
         img: (props: ImageBlockProps) => <WSMDImage {...props} openPopup={onPopupOpen} />,
@@ -33,7 +33,7 @@ const WSMarkdownRender: React.FC<WSMarkdownRenderProps> = ({content, onPopupOpen
     }
 
     return (
-        <div className={`${styles.content}`}>
+        <div className={`${styles.content}`} {...props}>
             {/* @ts-ignore */}
             <ReactMarkdown components={myComponents} className={`${styles.markdown}`} remarkPlugins={[gfm]}>{content}</ReactMarkdown>
         </div>
