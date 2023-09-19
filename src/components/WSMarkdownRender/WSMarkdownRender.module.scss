@@ -18,7 +18,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     h1, h2, h3, h4, h5, h6 {
         color: $main-color;
         width: 100%;
@@ -51,6 +51,7 @@
         @include textFormat($regular-size-desktop, 0 0 1rem, $main-color);
         width: 700px;
         text-align: justify;
+        width: 100%;
         line-height: 1.5rem;
 
         &:last-child {
@@ -61,7 +62,7 @@
     img {
         width: 700px;
         border-radius: 1rem;
-        margin: 2rem 0;
+        margin: 2rem auto;
         object-fit: cover;
     }
 }
