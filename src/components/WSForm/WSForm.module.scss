@@ -11,3 +11,9 @@
 .error {
     text-align: justify;
 }
+
+@media screen and (max-with: 767px) {
+    .WSForm {
+        width: 300px;
+    }
+}
