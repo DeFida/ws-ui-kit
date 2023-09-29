@@ -27,6 +27,10 @@ const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, intermediate
     setIsOpen(!isOpen);
   };
 
+
+  useEffect(() => {
+    setCurrentLabel(selectedOption ? selectedOption : {value: '', label: label})
+  }, [selectedOption])
   
 
   const handleOptionSelect = (option: SelectOption) => {
