@@ -32,6 +32,12 @@
             color: $white-color;
         }
     }
+
+    .highlighter {
+        margin: 1.5rem 0 0;
+        width: 100%;
+        display: flex;
+    }
 }
 
 .WSCodeBlockOneBacktick {

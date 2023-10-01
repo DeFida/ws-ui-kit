@@ -29,12 +29,17 @@
     }
 
     ul, ol {
-        list-style-type: disc;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
     
     li {
-        width: 100%;
-        display: flex;
+        @include textFormat(1rem, 0, $main-color);
+        width: calc(100% - 2.5rem);
+        line-height: 1.5rem
     }
     
     h2 {

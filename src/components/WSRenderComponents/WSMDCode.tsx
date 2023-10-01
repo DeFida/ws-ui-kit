@@ -36,20 +36,26 @@ const WSMDCode = ({className, children, ...props}) => {
               <button type="button" onClick={handleCopy} className={`${styles.WSCopyButton}`}>
                 {copied ? 'Copied' : 'Copy'}
               </button>
-              <SyntaxHighlighter
-                      language={match ? match[1] : 'javascript'}
-                      style={atelierDuneLight}
-                      customStyle={{
-                        backgroundColor: "transparent",
-                        width: "max-content",
-                        fontSize: "14px",
-                        lineHeight: "1.5rem",
-                        padding: "0",
-                      }}
-                      codeTagProps={{ className: `${styles.syntaxHighlighter}` }}
-                    >
-                      {children}
-                    </SyntaxHighlighter>
+              <div className={`${styles.highlighter}`}>
+                <SyntaxHighlighter
+                  language={match ? match[1] : 'javascript'}
+                  style={atelierDuneLight}
+                  customStyle={{
+                    backgroundColor: "transparent",
+                    width: "min-content",
+                    overflowWrap: "break-word",
+                    wordBreak: "break-all",
+                    whiteSpace: "normal",
+                    fontSize: "14px",
+                    lineHeight: "1.5rem",
+                    padding: "0",
+                  }}
+                  codeTagProps={{ className: `${styles.syntaxHighlighter}` }}
+                >
+                  {children}
+                </SyntaxHighlighter>
+              </div>
+              
             </div>
         )
     }
