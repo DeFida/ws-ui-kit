@@ -19,7 +19,7 @@ interface CustomSelectProps {
 const WSSelect: React.FC<CustomSelectProps> = ({ options, onSelect, intermediate, label, selectedOption=null }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const selectRef = useRef<HTMLDivElement | null>(null)
+  const selectRef = useRef<HTMLDivElement | null>(null);
 
   const [currentLabel, setCurrentLabel] = useState<SelectOption>(selectedOption ? selectedOption : {value: '', label: label})
 
