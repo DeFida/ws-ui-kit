@@ -21,3 +21,11 @@ export const MarkdownRender: Story = {
     onPopupOpen: (src: string) => {alert(src)}
   }
 };
+
+export const TableRender: Story = {
+  args: {
+    content: "| Операция | Сипаттама | Мысал |\n| --- | --- | --- |\n| s2 in s | s2 ішкі жолының s ішінде екенін тексеру | 'm' in 'team' |\n| s2 not in s | s2  ішкі жолының not (s2 in s) сияқты s-те жоқ екенін тексеру | 'I' not in 'team' |\n| s + s2 | Конкатенация (жолдарды біріктіру), яғни алдымен s-ден барлық таңбалар, содан кейін s2-ден барлық таңбалар келетін жол | 'tea' + 'm' == 'team' |\n| s * k | k рет қайталанған s жолы | 'oo' * 3 = 'oooooo' |",
+    onPopupOpen: (src: string) => {alert(src)}
+  }
+};
+

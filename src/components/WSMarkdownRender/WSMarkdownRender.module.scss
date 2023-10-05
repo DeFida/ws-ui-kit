@@ -41,6 +41,26 @@
         width: calc(100% - 2.5rem);
         line-height: 1.5rem
     }
+
+    table {
+        max-width: 700px;
+        width: 700px;
+    }
+
+    td {
+        border: 1px solid $gray-color;
+        padding: .25rem;
+        text-align: left;
+        @include textFormat($regular-size-desktop, 0);
+        
+    }
+
+    th {
+        border: 1px solid $gray-color;
+        padding: .25rem;
+        text-align: left;
+        @include textFormat($regular-size-desktop, 0);
+    }
     
     h2 {
         @include textFormat(1.5rem, 0 0 1rem, $main-color);

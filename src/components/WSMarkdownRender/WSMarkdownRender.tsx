@@ -25,11 +25,10 @@ const WSStrong: FC<WSStrongProps> = ({children}) => {
 
 
 const WSMarkdownRender: React.FC<WSMarkdownRenderProps> = ({content, onPopupOpen, ...props}) => {
-    
     const myComponents = {
         img: (props: ImageBlockProps) => <WSMDImage {...props} openPopup={onPopupOpen} />,
         strong: WSStrong,
-        code: WSMDCode
+        code: WSMDCode,
     }
 
     return (
