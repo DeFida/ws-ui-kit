@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './WSImage.module.scss';
+import WSParagraph from '../WSParagraph/WSParagraph';
 
 interface WSImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -7,12 +8,13 @@ interface WSImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   width: number;
   height: number;
   className?: string;
+  caption?: string;
   onPopupOpen?: (src: string) => void;
   style?: object;
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
 }
 
-const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen, width, objectFit='cover', height, className='', style, ...props }) => {
+const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen, caption, width, objectFit='cover', height, className='', style, ...props }) => {
   const [loaded, setLoaded] = useState(false);
 
   const handleLoad = () => {
@@ -32,6 +34,7 @@ const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen, width, objectF
         onClick={onPopupOpen ? () => onPopupOpen(src) : () => {}}
         {...props}
       />
+      {caption && <WSParagraph className={`${styles.caption}`} >{caption}</WSParagraph>}
       {
         !loaded &&  <div className={`${styles.placeholder}`}>
                       <div className={styles.loadingSpinner}></div>

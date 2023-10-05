@@ -1,9 +1,15 @@
 @import '../../vendor/variables.scss';
+@import '../../vendor/mixins.scss';
 
 .WSImage {
     display: flex;
     margin: 0;
     padding: 0;
+}
+
+.caption {
+    @include textFormat(14px, 0, rgba($main-color, .5));
+    margin-top: .25rem;
 }
 
 .clickable {
