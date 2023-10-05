@@ -45,6 +45,7 @@
     table {
         max-width: 700px;
         width: 700px;
+        margin-bottom: 1rem;
     }
 
     td {
@@ -52,7 +53,6 @@
         padding: .25rem;
         text-align: left;
         @include textFormat($regular-size-desktop, 0);
-        
     }
 
     th {
