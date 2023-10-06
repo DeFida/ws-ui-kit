@@ -15,6 +15,13 @@
 
     position: relative;
 
+    .language {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        @include textFormat(14px, 0, rgba($main-color, .5));
+    }
+
     .WSCopyButton {
         position: absolute;
         top: 1rem;

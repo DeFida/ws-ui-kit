@@ -87,6 +87,7 @@ const WSMDCode = ({className, children, ...props}) => {
     else if (isTripleBacktick) {
         return (
             <div className={`${styles.WSCodeBlock}`}>
+              <p className={`${styles.language}`}>{match && match[1]}</p>
               <button type="button" onClick={handleCopy} className={`${styles.WSCopyButton}`}>
                 {copied ? 'Copied' : 'Copy'}
               </button>
