@@ -34,7 +34,7 @@ const WSImage: React.FC<WSImageProps> = ({ src, alt, onPopupOpen, caption, width
         onClick={onPopupOpen ? () => onPopupOpen(src) : () => {}}
         {...props}
       />
-      {caption && <WSParagraph className={`${styles.caption}`} >{caption}</WSParagraph>}
+      {caption && <p style={{margin: '.5rem 0 1rem'}}><span className={`${styles.caption}`} >{caption}</span></p>}
       {
         !loaded &&  <div className={`${styles.placeholder}`}>
                       <div className={styles.loadingSpinner}></div>

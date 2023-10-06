@@ -6,7 +6,6 @@ import gfm from 'remark-gfm';
 import WSMDImage, { ImageBlockProps } from '../WSRenderComponents/WSMDImage';
 import WSMDCode from '../WSRenderComponents/WSMDCode';
 import fontsStyles from '../../styles/fonts.module.scss'
-import colorsStyles from '../../styles/colors.module.scss'
 
 
 
